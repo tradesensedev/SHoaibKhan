@@ -120,6 +120,26 @@
     /* Mobile menu */
     #mobile-menu { display: none; }
     #mobile-menu.open { display: block; }
+
+    /* FAQ smooth expand */
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease, padding 0.25s ease;
+      padding: 0 1.5rem;
+    }
+    .faq-answer.open {
+      max-height: 400px;
+      padding: 0 1.5rem 1.5rem;
+    }
+
+    /* Pricing card featured pop */
+    .pricing-featured {
+      transform: scale(1.02);
+    }
+    @media (max-width: 768px) {
+      .pricing-featured { transform: scale(1); }
+    }
   </style>
 </head>
 
@@ -316,7 +336,7 @@
       <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
 
         <!-- Service 1 -->
-        <div class="service-card reveal bg-brand-gray border border-gray-100 rounded-2xl p-6 hover:border-brand-red/30 transition-all duration-300 cursor-default">
+        <div class="service-card reveal bg-brand-gray border border-gray-100 rounded-2xl p-6 hover:border-brand-red/30 hover:shadow-md transition-all duration-300 cursor-default">
           <div class="service-icon text-4xl mb-5">🎯</div>
           <div class="inline-block bg-red-50 text-brand-red text-xs font-bold px-3 py-1 rounded-full mb-3">Viral Topic Selection</div>
           <h3 class="font-bold text-brand-navy text-lg mb-2">ভাইরাল টপিক বাছাই</h3>
@@ -326,7 +346,7 @@
         </div>
 
         <!-- Service 2 -->
-        <div class="service-card reveal bg-brand-gray border border-gray-100 rounded-2xl p-6 hover:border-brand-red/30 transition-all duration-300 cursor-default">
+        <div class="service-card reveal bg-brand-gray border border-gray-100 rounded-2xl p-6 hover:border-brand-red/30 hover:shadow-md transition-all duration-300 cursor-default">
           <div class="service-icon text-4xl mb-5">🔍</div>
           <div class="inline-block bg-blue-50 text-blue-600 text-xs font-bold px-3 py-1 rounded-full mb-3">Deep Research</div>
           <h3 class="font-bold text-brand-navy text-lg mb-2">গভীর রিসার্চ</h3>
@@ -336,7 +356,7 @@
         </div>
 
         <!-- Service 3 -->
-        <div class="service-card reveal bg-brand-gray border border-gray-100 rounded-2xl p-6 hover:border-brand-red/30 transition-all duration-300 cursor-default">
+        <div class="service-card reveal bg-brand-gray border border-gray-100 rounded-2xl p-6 hover:border-brand-red/30 hover:shadow-md transition-all duration-300 cursor-default">
           <div class="service-icon text-4xl mb-5">🧠</div>
           <div class="inline-block bg-purple-50 text-purple-600 text-xs font-bold px-3 py-1 rounded-full mb-3">Psychology & Emotion</div>
           <h3 class="font-bold text-brand-navy text-lg mb-2">এনগেজিং স্ক্রিপ্ট রাইটিং</h3>
@@ -346,7 +366,7 @@
         </div>
 
         <!-- Service 4 -->
-        <div class="service-card reveal bg-brand-gray border border-gray-100 rounded-2xl p-6 hover:border-brand-red/30 transition-all duration-300 cursor-default">
+        <div class="service-card reveal bg-brand-gray border border-gray-100 rounded-2xl p-6 hover:border-brand-red/30 hover:shadow-md transition-all duration-300 cursor-default">
           <div class="service-icon text-4xl mb-5">📅</div>
           <div class="inline-block bg-green-50 text-green-600 text-xs font-bold px-3 py-1 rounded-full mb-3">Content Strategy</div>
           <h3 class="font-bold text-brand-navy text-lg mb-2">পরবর্তী কন্টেন্ট প্ল্যানিং</h3>
@@ -454,7 +474,7 @@
       </div>
 
       <!-- Script Cards Grid -->
-      <div class="grid sm:grid-cols-2 lg:grid-cols-2 gap-6">
+      <div class="grid sm:grid-cols-2 gap-6">
 
         <!-- Card 1 -->
         <div class="script-card reveal bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-sm">
@@ -475,7 +495,7 @@
               <span class="bg-gray-100 text-gray-600 text-xs px-3 py-1 rounded-full">Emotional Factor</span>
               <span class="bg-gray-100 text-gray-600 text-xs px-3 py-1 rounded-full">Viral</span>
             </div>
-            <a href="YOUR_GOOGLE_DOCS_LINK_1" target="_blank" class="flex items-center justify-center gap-2 w-full bg-brand-navy text-white font-semibold py-3 rounded-xl hover:bg-gray-800 transition-colors text-sm">
+            <a href="https://docs.google.com/document/d/1-qDnqkmKOREEm44rreaSyw8g8R93cCdj1v6ncL2Ls2c/edit?usp=sharing" target="_blank" class="flex items-center justify-center gap-2 w-full bg-brand-red text-white font-semibold py-3 rounded-xl hover:bg-red-700 transition-colors text-sm">
               <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zm-1 1.5L18.5 9H13V3.5zM6 20V4h5v7h7v9H6z"/></svg>
               Read Script on Google Docs
             </a>
@@ -501,7 +521,7 @@
               <span class="bg-gray-100 text-gray-600 text-xs px-3 py-1 rounded-full">Audience Psychology</span>
               <span class="bg-gray-100 text-gray-600 text-xs px-3 py-1 rounded-full">Deep Research</span>
             </div>
-            <a href="YOUR_GOOGLE_DOCS_LINK_2" target="_blank" class="flex items-center justify-center gap-2 w-full bg-brand-blue text-white font-semibold py-3 rounded-xl hover:bg-blue-700 transition-colors text-sm">
+            <a href="https://docs.google.com/document/d/1kWuJ6bT7R-yfvIPGImOXyNDU6M6n_DPaH40FUzMYA90/edit?usp=sharing" target="_blank" class="flex items-center justify-center gap-2 w-full bg-brand-red text-white font-semibold py-3 rounded-xl hover:bg-red-700 transition-colors text-sm">
               <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zm-1 1.5L18.5 9H13V3.5zM6 20V4h5v7h7v9H6z"/></svg>
               Read Script on Google Docs
             </a>
@@ -527,7 +547,7 @@
               <span class="bg-gray-100 text-gray-600 text-xs px-3 py-1 rounded-full">Hook</span>
               <span class="bg-gray-100 text-gray-600 text-xs px-3 py-1 rounded-full">Retention</span>
             </div>
-            <a href="YOUR_GOOGLE_DOCS_LINK_3" target="_blank" class="flex items-center justify-center gap-2 w-full bg-purple-600 text-white font-semibold py-3 rounded-xl hover:bg-purple-700 transition-colors text-sm">
+            <a href="https://docs.google.com/document/d/1WPXWMZtzFgFv3MqnboU0huh7UWCaUQqAUMlA1K15Ybo/edit?usp=sharing" target="_blank" class="flex items-center justify-center gap-2 w-full bg-brand-red text-white font-semibold py-3 rounded-xl hover:bg-red-700 transition-colors text-sm">
               <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zm-1 1.5L18.5 9H13V3.5zM6 20V4h5v7h7v9H6z"/></svg>
               Read Script on Google Docs
             </a>
@@ -553,7 +573,7 @@
               <span class="bg-gray-100 text-gray-600 text-xs px-3 py-1 rounded-full">Shareable</span>
               <span class="bg-gray-100 text-gray-600 text-xs px-3 py-1 rounded-full">Viral</span>
             </div>
-            <a href="YOUR_GOOGLE_DOCS_LINK_4" target="_blank" class="flex items-center justify-center gap-2 w-full bg-brand-gold text-white font-semibold py-3 rounded-xl hover:bg-yellow-600 transition-colors text-sm">
+            <a href="https://docs.google.com/document/d/18miWlLbO4Km0-RObyvxFFQz7k_yL99Fz-6cZecluBCY/edit?usp=sharing" target="_blank" class="flex items-center justify-center gap-2 w-full bg-brand-red text-white font-semibold py-3 rounded-xl hover:bg-red-700 transition-colors text-sm">
               <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zm-1 1.5L18.5 9H13V3.5zM6 20V4h5v7h7v9H6z"/></svg>
               Read Script on Google Docs
             </a>
@@ -594,7 +614,7 @@
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/></svg>
             </span>
           </button>
-          <div class="faq-answer hidden px-6 pb-6">
+          <div class="faq-answer">
             <div class="pl-14">
               <p class="text-gray-600 text-base leading-relaxed">সাধারণত একটি স্ক্রিপ্ট লিখতে <strong class="text-brand-navy">৩–৫ কার্যদিবস</strong> সময় লাগে। এর মধ্যে বিষয় রিসার্চ, অডিয়েন্স অ্যানালাইসিস এবং সম্পূর্ণ স্ক্রিপ্ট লেখা অন্তর্ভুক্ত। জরুরি প্রয়োজনে <strong class="text-brand-red">এক্সপ্রেস ডেলিভারি</strong>-র ব্যবস্থা আছে (অতিরিক্ত চার্জ প্রযোজ্য)।</p>
             </div>
@@ -614,7 +634,7 @@
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/></svg>
             </span>
           </button>
-          <div class="faq-answer hidden px-6 pb-6">
+          <div class="faq-answer">
             <div class="pl-14">
               <p class="text-gray-600 text-base leading-relaxed">প্যাকেজ অনুযায়ী <strong class="text-brand-navy">২–৩ বার ফ্রি রিভিশন</strong> পাবেন। আপনার feedback দেওয়ার পর আমি ২৪ ঘণ্টার মধ্যে রিভাইজড ভার্সন পাঠিয়ে দেব। আমার লক্ষ্য হলো আপনি <strong class="text-brand-red">১০০% সন্তুষ্ট</strong> না হওয়া পর্যন্ত কাজ করে যাওয়া।</p>
             </div>
@@ -634,7 +654,7 @@
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/></svg>
             </span>
           </button>
-          <div class="faq-answer hidden px-6 pb-6">
+          <div class="faq-answer">
             <div class="pl-14">
               <p class="text-gray-600 text-base leading-relaxed">প্রথমে <a href="#contact" class="text-brand-red font-semibold hover:underline">Contact Form</a> বা WhatsApp-এ মেসেজ করুন। আমি আপনার চ্যানেল এবং চাহিদা সম্পর্কে জানার পর <strong class="text-brand-navy">উপযুক্ত প্যাকেজ সাজেস্ট</strong> করব। পেমেন্টের পর রিসার্চ শুরু হবে এবং ধাপে ধাপে কাজ এগিয়ে যাবে।</p>
             </div>
@@ -654,7 +674,7 @@
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/></svg>
             </span>
           </button>
-          <div class="faq-answer hidden px-6 pb-6">
+          <div class="faq-answer">
             <div class="pl-14">
               <p class="text-gray-600 text-base leading-relaxed">আমি <strong class="text-brand-navy">Audience Psychology ও Emotional Factor</strong>-ভিত্তিক স্ক্রিপ্ট লিখি যা প্রমাণিতভাবে কাজ করে — আমার ট্র্যাক রেকর্ড তার সাক্ষী। তবে YouTube-এর সাফল্য শুধু স্ক্রিপ্টের উপর নির্ভর করে না; থাম্বনেইল, এডিটিং এবং কনসিস্টেন্সিও গুরুত্বপূর্ণ। আমি সর্বোচ্চ মানের <strong class="text-brand-red">Viral-Worthy স্ক্রিপ্ট</strong> দেওয়ার প্রতিশ্রুতি দিই।</p>
             </div>
@@ -674,7 +694,7 @@
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/></svg>
             </span>
           </button>
-          <div class="faq-answer hidden px-6 pb-6">
+          <div class="faq-answer">
             <div class="pl-14">
               <p class="text-gray-600 text-base leading-relaxed">আমার বিশেষত্ব হলো <strong class="text-brand-navy">Bangla YouTube Content</strong>-এর জন্য <strong class="text-brand-red">Audience Psychology</strong>, Viral Hook লেখা, Emotional Storytelling এবং Deep Research-ভিত্তিক স্ক্রিপ্ট তৈরি। Education, Motivation, Tech, Finance, Lifestyle — বিভিন্ন niche-এ কাজ করার অভিজ্ঞতা আছে।</p>
             </div>
@@ -694,7 +714,7 @@
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/></svg>
             </span>
           </button>
-          <div class="faq-answer hidden px-6 pb-6">
+          <div class="faq-answer">
             <div class="pl-14">
               <p class="text-gray-600 text-base leading-relaxed">প্রতিটি স্ক্রিপ্টে সর্বোচ্চ মনোযোগ দেওয়ার জন্য আমি একসাথে <strong class="text-brand-navy">সীমিত সংখ্যক চ্যানেলে</strong> কাজ করি। বর্তমানে <strong class="text-green-600">স্লট উপলব্ধ আছে</strong> — তাই দেরি না করে এখনই যোগাযোগ করুন। স্লট শেষ হলে waitlist-এ থাকতে হবে।</p>
             </div>
@@ -714,7 +734,7 @@
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/></svg>
             </span>
           </button>
-          <div class="faq-answer hidden px-6 pb-6">
+          <div class="faq-answer">
             <div class="pl-14">
               <p class="text-gray-600 text-base leading-relaxed">পেমেন্ট গ্রহণ করা হয় <strong class="text-brand-navy">bKash, Nagad, Rocket</strong> এবং ব্যাংক ট্রান্সফারের মাধ্যমে। আন্তর্জাতিক ক্লায়েন্টদের জন্য <strong class="text-brand-navy">PayPal / Wise</strong>-ও গ্রহণযোগ্য। কাজ শুরুর আগে <strong class="text-brand-red">৫০% অ্যাডভান্স</strong>, ডেলিভারির পর বাকি ৫০%।</p>
             </div>
@@ -734,7 +754,7 @@
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/></svg>
             </span>
           </button>
-          <div class="faq-answer hidden px-6 pb-6">
+          <div class="faq-answer">
             <div class="pl-14">
               <p class="text-gray-600 text-base leading-relaxed">কাজ শুরুর আগে অর্থাৎ রিসার্চ পর্যায়ে বাতিল করলে <strong class="text-brand-navy">অ্যাডভান্স ফেরত</strong> দেওয়া হবে। তবে স্ক্রিপ্ট ডেলিভারির পর রিফান্ড নেই — কারণ তখন ইতিমধ্যে পূর্ণ কাজ সম্পন্ন হয়ে গেছে। আমি সর্বদা নিশ্চিত করি যে আপনি ডেলিভারি পাওয়ার আগে <strong class="text-brand-red">সম্পূর্ণ সন্তুষ্ট</strong> হন।</p>
             </div>
@@ -746,7 +766,7 @@
       <!-- Bottom CTA -->
       <div class="text-center mt-12 reveal">
         <p class="text-gray-500 mb-4">আরও প্রশ্ন আছে?</p>
-        <a href="#contact" class="inline-flex items-center gap-2 bg-brand-red text-white font-bold px-7 py-4 rounded-xl hover:bg-red-700 transition-all duration-300 shadow-lg shadow-red-100">
+        <a href="https://wa.me/8801871741955" target="_blank" class="inline-flex items-center gap-2 bg-brand-red text-white font-bold px-7 py-4 rounded-xl hover:bg-red-700 transition-all duration-300 shadow-lg shadow-red-100">
           <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824zm-3.423-14.416c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm.029 18.88c-1.161 0-2.305-.292-3.318-.844l-3.677.964.984-3.595c-.607-1.052-.927-2.246-.926-3.468.001-3.825 3.113-6.937 6.937-6.937 1.856.001 3.598.723 4.907 2.034 1.31 1.311 2.031 3.054 2.03 4.908-.001 3.825-3.113 6.938-6.937 6.938z"/></svg>
           WhatsApp-এ জিজ্ঞেস করুন
         </a>
@@ -769,13 +789,81 @@
         <p class="text-gray-500 text-lg max-w-xl mx-auto">আমার সাথে কাজ করলে প্রতিটি ধাপে আপনি জানবেন কী হচ্ছে — কোনো অনিশ্চয়তা নেই।</p>
       </div>
 
-      <!-- Timeline Steps -->
+      <!-- Timeline Steps — Mobile: stacked cards; Desktop: alternating timeline -->
       <div class="relative">
 
         <!-- Center line (desktop only) -->
         <div class="hidden lg:block absolute left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-brand-red via-brand-blue to-brand-gold -translate-x-1/2 rounded-full"></div>
 
-        <div class="space-y-8 lg:space-y-0">
+        <!-- Mobile: simple numbered steps -->
+        <div class="lg:hidden space-y-4">
+
+          <div class="reveal flex gap-4 bg-white border border-gray-200 rounded-2xl p-5 shadow-sm">
+            <div class="w-12 h-12 bg-red-50 rounded-xl flex items-center justify-center text-2xl flex-shrink-0">💬</div>
+            <div>
+              <div class="inline-flex items-center gap-1.5 bg-red-50 text-brand-red text-xs font-bold px-2 py-0.5 rounded-full mb-1">ধাপ ০১</div>
+              <h3 class="font-bold text-brand-navy text-base mb-1">Initial Consultation</h3>
+              <p class="text-gray-500 text-sm leading-relaxed">আপনার চ্যানেলের niche, target audience এবং লক্ষ্য সম্পর্কে বিস্তারিত আলোচনা।</p>
+              <div class="flex items-center gap-1.5 mt-2"><svg class="w-3.5 h-3.5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg><span class="text-xs font-semibold text-gray-400">১ দিন</span></div>
+            </div>
+          </div>
+
+          <div class="reveal flex gap-4 bg-white border border-gray-200 rounded-2xl p-5 shadow-sm">
+            <div class="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center text-2xl flex-shrink-0">🧠</div>
+            <div>
+              <div class="inline-flex items-center gap-1.5 bg-blue-50 text-brand-blue text-xs font-bold px-2 py-0.5 rounded-full mb-1">ধাপ ০২</div>
+              <h3 class="font-bold text-brand-navy text-base mb-1">Audience Research</h3>
+              <p class="text-gray-500 text-sm leading-relaxed">আপনার দর্শকদের মনোবিজ্ঞান, তাদের সমস্যা, ইচ্ছা এবং আবেগ বিশ্লেষণ করি।</p>
+              <div class="flex items-center gap-1.5 mt-2"><svg class="w-3.5 h-3.5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg><span class="text-xs font-semibold text-gray-400">১–২ দিন</span></div>
+            </div>
+          </div>
+
+          <div class="reveal flex gap-4 bg-white border border-gray-200 rounded-2xl p-5 shadow-sm">
+            <div class="w-12 h-12 bg-amber-50 rounded-xl flex items-center justify-center text-2xl flex-shrink-0">🎯</div>
+            <div>
+              <div class="inline-flex items-center gap-1.5 bg-amber-50 text-brand-gold text-xs font-bold px-2 py-0.5 rounded-full mb-1">ধাপ ০৩</div>
+              <h3 class="font-bold text-brand-navy text-base mb-1">Topic Research & Selection</h3>
+              <p class="text-gray-500 text-sm leading-relaxed">ট্রেন্ড অ্যানালাইসিস করে Viral হওয়ার সম্ভাবনা সবচেয়ে বেশি এমন টপিক বেছে নেওয়া হয়।</p>
+              <div class="flex items-center gap-1.5 mt-2"><svg class="w-3.5 h-3.5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg><span class="text-xs font-semibold text-gray-400">১ দিন</span></div>
+            </div>
+          </div>
+
+          <div class="reveal flex gap-4 bg-brand-navy rounded-2xl p-5 shadow-sm relative overflow-hidden">
+            <div class="stripe-bg absolute inset-0 pointer-events-none opacity-50"></div>
+            <div class="w-12 h-12 bg-brand-red/20 rounded-xl flex items-center justify-center text-2xl flex-shrink-0 relative">✍️</div>
+            <div class="relative">
+              <div class="inline-flex items-center gap-1.5 bg-brand-red/20 text-brand-red text-xs font-bold px-2 py-0.5 rounded-full mb-1">ধাপ ০৪ — মূল কাজ</div>
+              <h3 class="font-bold text-white text-base mb-1">Script Writing</h3>
+              <p class="text-gray-300 text-sm leading-relaxed"><strong class="text-white">Psychology + Emotion</strong>-ভিত্তিক স্ক্রিপ্ট লেখা হয়। শক্তিশালী Hook দিয়ে শুরু, মাঝে Emotional storytelling এবং শেষে powerful CTA।</p>
+              <div class="flex items-center gap-1.5 mt-2"><svg class="w-3.5 h-3.5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg><span class="text-xs font-semibold text-gray-400">২–৩ দিন</span></div>
+            </div>
+          </div>
+
+          <div class="reveal flex gap-4 bg-white border border-gray-200 rounded-2xl p-5 shadow-sm">
+            <div class="w-12 h-12 bg-green-50 rounded-xl flex items-center justify-center text-2xl flex-shrink-0">🔄</div>
+            <div>
+              <div class="inline-flex items-center gap-1.5 bg-green-50 text-green-600 text-xs font-bold px-2 py-0.5 rounded-full mb-1">ধাপ ০৫</div>
+              <h3 class="font-bold text-brand-navy text-base mb-1">Revision & Refinement</h3>
+              <p class="text-gray-500 text-sm leading-relaxed">আপনার feedback নিয়ে স্ক্রিপ্ট পরিমার্জন করা হয়। আপনি সম্পূর্ণ সন্তুষ্ট না হওয়া পর্যন্ত কাজ করে যাই।</p>
+              <div class="flex items-center gap-1.5 mt-2"><svg class="w-3.5 h-3.5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg><span class="text-xs font-semibold text-gray-400">১–২ দিন</span></div>
+            </div>
+          </div>
+
+          <div class="reveal flex gap-4 bg-white border-2 border-brand-gold/30 rounded-2xl p-5 shadow-sm relative">
+            <div class="absolute -top-3 right-4 bg-brand-gold text-gray-900 text-xs font-bold px-3 py-1 rounded-full">🎉 Final Step</div>
+            <div class="w-12 h-12 bg-amber-50 rounded-xl flex items-center justify-center text-2xl flex-shrink-0">🚀</div>
+            <div>
+              <div class="inline-flex items-center gap-1.5 bg-amber-50 text-brand-gold text-xs font-bold px-2 py-0.5 rounded-full mb-1">ধাপ ০৬</div>
+              <h3 class="font-bold text-brand-navy text-base mb-1">Final Delivery</h3>
+              <p class="text-gray-500 text-sm leading-relaxed">সম্পূর্ণ প্রস্তুত স্ক্রিপ্ট Google Docs-এ ফরম্যাটেড করে ডেলিভার করা হয়। সাথে থাকবে <strong>Thumbnail Idea</strong> এবং প্রয়োজনীয় কনটেন্ট নোট।</p>
+              <div class="flex items-center gap-1.5 mt-2"><svg class="w-3.5 h-3.5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg><span class="text-xs font-semibold text-gray-400">মোট: ৩–৫ কার্যদিবস</span></div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Desktop: alternating timeline -->
+        <div class="hidden lg:block space-y-0">
 
           <!-- Step 1 — Left -->
           <div class="lg:grid lg:grid-cols-2 lg:gap-16 lg:items-center lg:mb-12 reveal">
@@ -810,14 +898,14 @@
                 <div class="flex items-center gap-4 mb-4">
                   <div class="w-14 h-14 bg-blue-50 rounded-2xl flex items-center justify-center text-3xl flex-shrink-0">🧠</div>
                   <div>
-                    <div class="inline-flex items-center gap-1.5 bg-blue-50 text-brand-blue text-xs font-bold px-3 py-1 rounded-full mb-1">ধাপ ০२</div>
+                    <div class="inline-flex items-center gap-1.5 bg-blue-50 text-brand-blue text-xs font-bold px-3 py-1 rounded-full mb-1">ধাপ ০২</div>
                     <h3 class="font-bold text-brand-navy text-xl">Audience Research</h3>
                   </div>
                 </div>
                 <p class="text-gray-500 text-base leading-relaxed">আপনার দর্শকদের মনোবিজ্ঞান, তাদের সমস্যা, ইচ্ছা এবং আবেগ বিশ্লেষণ করি। কী দেখলে তারা ক্লিক করে, কী শুনলে শেষ পর্যন্ত ভিডিও দেখে — সেটা বোঝাই এই ধাপের কাজ।</p>
                 <div class="flex items-center gap-2 mt-4">
                   <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                  <span class="text-xs font-semibold text-gray-400">१–२ দিন</span>
+                  <span class="text-xs font-semibold text-gray-400">১–২ দিন</span>
                 </div>
               </div>
             </div>
@@ -830,14 +918,14 @@
                 <div class="flex items-center gap-4 mb-4 lg:flex-row-reverse">
                   <div class="w-14 h-14 bg-amber-50 rounded-2xl flex items-center justify-center text-3xl flex-shrink-0">🎯</div>
                   <div class="lg:text-right">
-                    <div class="inline-flex items-center gap-1.5 bg-amber-50 text-brand-gold text-xs font-bold px-3 py-1 rounded-full mb-1">ধাপ ०३</div>
+                    <div class="inline-flex items-center gap-1.5 bg-amber-50 text-brand-gold text-xs font-bold px-3 py-1 rounded-full mb-1">ধাপ ০৩</div>
                     <h3 class="font-bold text-brand-navy text-xl">Topic Research & Selection</h3>
                   </div>
                 </div>
                 <p class="text-gray-500 text-base leading-relaxed lg:text-right">ট্রেন্ড অ্যানালাইসিস করে এমন টপিক বেছে নেওয়া হয় যা Viral হওয়ার সম্ভাবনা সবচেয়ে বেশি। আপনার niche-এ কী কনটেন্ট দর্শকরা খুঁজছে সেটা ডেটা দিয়ে প্রমাণ করি।</p>
                 <div class="flex items-center gap-2 mt-4 lg:justify-end">
                   <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                  <span class="text-xs font-semibold text-gray-400">१ দিন</span>
+                  <span class="text-xs font-semibold text-gray-400">১ দিন</span>
                 </div>
               </div>
             </div>
@@ -857,14 +945,14 @@
                 <div class="relative flex items-center gap-4 mb-4">
                   <div class="w-14 h-14 bg-brand-red/20 rounded-2xl flex items-center justify-center text-3xl flex-shrink-0">✍️</div>
                   <div>
-                    <div class="inline-flex items-center gap-1.5 bg-brand-red/20 text-brand-red text-xs font-bold px-3 py-1 rounded-full mb-1">ধাপ ०४ — মূল কাজ</div>
+                    <div class="inline-flex items-center gap-1.5 bg-brand-red/20 text-brand-red text-xs font-bold px-3 py-1 rounded-full mb-1">ধাপ ০৪ — মূল কাজ</div>
                     <h3 class="font-bold text-white text-xl">Script Writing</h3>
                   </div>
                 </div>
                 <p class="relative text-gray-300 text-base leading-relaxed"><strong class="text-white">Psychology + Emotion</strong>-ভিত্তিক স্ক্রিপ্ট লেখা হয়। শক্তিশালী Hook দিয়ে শুরু, মাঝে Emotional storytelling এবং শেষে powerful CTA — প্রতিটি লাইন লেখা হয় দর্শককে মাথায় রেখে।</p>
                 <div class="relative flex items-center gap-2 mt-4">
                   <svg class="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                  <span class="text-xs font-semibold text-gray-400">२–३ দिন</span>
+                  <span class="text-xs font-semibold text-gray-400">২–৩ দিন</span>
                 </div>
               </div>
             </div>
@@ -877,14 +965,14 @@
                 <div class="flex items-center gap-4 mb-4 lg:flex-row-reverse">
                   <div class="w-14 h-14 bg-green-50 rounded-2xl flex items-center justify-center text-3xl flex-shrink-0">🔄</div>
                   <div class="lg:text-right">
-                    <div class="inline-flex items-center gap-1.5 bg-green-50 text-green-600 text-xs font-bold px-3 py-1 rounded-full mb-1">ধাপ ०५</div>
+                    <div class="inline-flex items-center gap-1.5 bg-green-50 text-green-600 text-xs font-bold px-3 py-1 rounded-full mb-1">ধাপ ০৫</div>
                     <h3 class="font-bold text-brand-navy text-xl">Revision & Refinement</h3>
                   </div>
                 </div>
                 <p class="text-gray-500 text-base leading-relaxed lg:text-right">আপনার feedback নিয়ে স্ক্রিপ্ট পরিমার্জন করা হয়। টোন, স্টাইল বা কনটেন্টে যেকোনো পরিবর্তন — আপনি সম্পূর্ণ সন্তুষ্ট না হওয়া পর্যন্ত কাজ করে যাই।</p>
                 <div class="flex items-center gap-2 mt-4 lg:justify-end">
                   <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                  <span class="text-xs font-semibold text-gray-400">१–२ दिन</span>
+                  <span class="text-xs font-semibold text-gray-400">১–২ দিন</span>
                 </div>
               </div>
             </div>
@@ -904,14 +992,14 @@
                 <div class="flex items-center gap-4 mb-4">
                   <div class="w-14 h-14 bg-amber-50 rounded-2xl flex items-center justify-center text-3xl flex-shrink-0">🚀</div>
                   <div>
-                    <div class="inline-flex items-center gap-1.5 bg-amber-50 text-brand-gold text-xs font-bold px-3 py-1 rounded-full mb-1">ধাপ ०६</div>
+                    <div class="inline-flex items-center gap-1.5 bg-amber-50 text-brand-gold text-xs font-bold px-3 py-1 rounded-full mb-1">ধাপ ০৬</div>
                     <h3 class="font-bold text-brand-navy text-xl">Final Delivery</h3>
                   </div>
                 </div>
                 <p class="text-gray-500 text-base leading-relaxed">সম্পূর্ণ প্রস্তুত স্ক্রিপ্ট Google Docs-এ ফরম্যাটেড করে ডেলিভার করা হয়। সাথে থাকবে <strong class="text-brand-navy">Thumbnail Idea</strong> এবং প্রয়োজনীয় কনটেন্ট নোট।</p>
                 <div class="flex items-center gap-2 mt-4">
                   <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                  <span class="text-xs font-semibold text-gray-400">মোট: ३–५ কার্যदिвस</span>
+                  <span class="text-xs font-semibold text-gray-400">মোট: ৩–৫ কার্যদিবস</span>
                 </div>
               </div>
             </div>
@@ -949,7 +1037,7 @@
       </div>
 
       <!-- Pricing Cards Grid -->
-      <div class="grid md:grid-cols-3 gap-6 lg:gap-8">
+      <div class="grid md:grid-cols-3 gap-6 lg:gap-8 items-start">
 
         <!-- Package 1: Starter -->
         <div class="reveal bg-white border border-gray-200 rounded-3xl overflow-hidden shadow-sm script-card flex flex-col">
@@ -967,8 +1055,8 @@
             <!-- Price -->
             <div class="mb-6 pb-6 border-b border-gray-100">
               <div class="flex items-end gap-1">
-                <span class="text-gray-400 text-lg">৳</span>
-                <span class="font-display font-bold text-4xl text-brand-navy">XXXX</span>
+                <span class="text-gray-400 text-lg font-semibold">৳</span>
+                <span class="font-display font-bold text-4xl text-brand-navy">১,৫০০</span>
               </div>
               <p class="text-gray-400 text-xs mt-1">প্রতি স্ক্রিপ্ট</p>
             </div>
@@ -979,7 +1067,7 @@
                 <span class="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
                   <svg class="w-3 h-3 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
                 </span>
-                <span class="text-gray-600 text-sm"><strong class="text-brand-navy">१टि</strong> সম্পূর্ণ স্ক্রিপ্ট</span>
+                <span class="text-gray-600 text-sm"><strong class="text-brand-navy">১টি</strong> সম্পূর্ণ স্ক্রিপ্ট</span>
               </li>
               <li class="flex items-start gap-3">
                 <span class="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
@@ -991,13 +1079,13 @@
                 <span class="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
                   <svg class="w-3 h-3 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
                 </span>
-                <span class="text-gray-600 text-sm"><strong class="text-brand-navy">२ बार</strong> ফ্রি রিভিশন</span>
+                <span class="text-gray-600 text-sm"><strong class="text-brand-navy">২ বার</strong> ফ্রি রিভিশন</span>
               </li>
               <li class="flex items-start gap-3">
                 <span class="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
                   <svg class="w-3 h-3 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
                 </span>
-                <span class="text-gray-600 text-sm">ডেলিভারি: <strong class="text-brand-navy">३–५ দिन</strong></span>
+                <span class="text-gray-600 text-sm">ডেলিভারি: <strong class="text-brand-navy">৩–৫ দিন</strong></span>
               </li>
               <li class="flex items-start gap-3">
                 <span class="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
@@ -1019,14 +1107,14 @@
               </li>
             </ul>
 
-            <a href="#contact" class="block text-center bg-brand-navy text-white font-bold py-4 rounded-xl hover:bg-gray-800 transition-all duration-300">
+            <a href="#contact" class="block text-center bg-brand-red text-white font-bold py-4 rounded-xl hover:bg-red-700 transition-all duration-300 shadow-lg shadow-red-100">
               এই প্যাকেজ নিতে চান?
             </a>
           </div>
         </div>
 
         <!-- Package 2: Professional (Featured) -->
-        <div class="reveal bg-brand-navy rounded-3xl overflow-hidden shadow-2xl script-card flex flex-col relative -mt-0 md:-mt-4 md:mb-0">
+        <div class="reveal bg-brand-navy rounded-3xl overflow-hidden shadow-2xl script-card flex flex-col relative pricing-featured">
           <!-- Top gradient bar -->
           <div class="h-1.5 bg-gradient-to-r from-brand-red via-orange-500 to-brand-gold"></div>
 
@@ -1050,10 +1138,10 @@
             <!-- Price -->
             <div class="mb-6 pb-6 border-b border-white/10 relative">
               <div class="flex items-end gap-1">
-                <span class="text-brand-gold text-lg">৳</span>
-                <span class="font-display font-bold text-4xl text-white">XXXX</span>
+                <span class="text-brand-gold text-lg font-semibold">৳</span>
+                <span class="font-display font-bold text-4xl text-white">৩,৫০০</span>
               </div>
-              <p class="text-gray-400 text-xs mt-1">३टि लिपि के लिए</p>
+              <p class="text-gray-400 text-xs mt-1">৩টি স্ক্রিপ্টের জন্য</p>
             </div>
 
             <!-- Features -->
@@ -1062,7 +1150,7 @@
                 <span class="w-5 h-5 bg-brand-red/20 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
                   <svg class="w-3 h-3 text-brand-red" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
                 </span>
-                <span class="text-gray-300 text-sm"><strong class="text-white">३टि</strong> সম্পূร্ণ স্ক्রिप्ट</span>
+                <span class="text-gray-300 text-sm"><strong class="text-white">৩টি</strong> সম্পূর্ণ স্ক্রিপ্ট</span>
               </li>
               <li class="flex items-start gap-3">
                 <span class="w-5 h-5 bg-brand-red/20 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
@@ -1074,36 +1162,36 @@
                 <span class="w-5 h-5 bg-brand-red/20 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
                   <svg class="w-3 h-3 text-brand-red" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
                 </span>
-                <span class="text-gray-300 text-sm">Content Strategy পরামর्श</span>
+                <span class="text-gray-300 text-sm">Content Strategy পরামর্শ</span>
               </li>
               <li class="flex items-start gap-3">
                 <span class="w-5 h-5 bg-brand-red/20 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
                   <svg class="w-3 h-3 text-brand-red" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
                 </span>
-                <span class="text-gray-300 text-sm"><strong class="text-white">३ बार</strong> ফ্রি رिভिশन (प्रতिটি)</span>
+                <span class="text-gray-300 text-sm"><strong class="text-white">৩ বার</strong> ফ্রি রিভিশন (প্রতিটি)</span>
               </li>
               <li class="flex items-start gap-3">
                 <span class="w-5 h-5 bg-brand-red/20 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
                   <svg class="w-3 h-3 text-brand-red" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
                 </span>
-                <span class="text-gray-300 text-sm">ডেलिভारी: <strong class="text-white">७–१० দिन</strong></span>
+                <span class="text-gray-300 text-sm">ডেলিভারি: <strong class="text-white">৭–১০ দিন</strong></span>
               </li>
               <li class="flex items-start gap-3">
                 <span class="w-5 h-5 bg-brand-gold/20 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
                   <svg class="w-3 h-3 text-brand-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
                 </span>
-                <span class="text-gray-300 text-sm">🎁 ३टि Thumbnail Idea बोनस</span>
+                <span class="text-gray-300 text-sm">🎁 ৩টি Thumbnail Idea বোনাস</span>
               </li>
               <li class="flex items-start gap-3">
                 <span class="w-5 h-5 bg-brand-gold/20 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
                   <svg class="w-3 h-3 text-brand-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
                 </span>
-                <span class="text-gray-300 text-sm">🎁 Channel Audit Report बोनस</span>
+                <span class="text-gray-300 text-sm">🎁 Channel Audit Report বোনাস</span>
               </li>
             </ul>
 
             <a href="#contact" class="relative block text-center bg-brand-red text-white font-bold py-4 rounded-xl hover:bg-red-600 transition-all duration-300 shadow-lg shadow-red-900/30">
-              এই প্যাকেজ নিতე চান? →
+              এই প্যাকেজ নিতে চান? →
             </a>
           </div>
         </div>
@@ -1115,19 +1203,19 @@
             <!-- Badge + Title -->
             <div class="mb-6">
               <div class="inline-flex items-center gap-2 bg-blue-50 text-brand-blue text-xs font-bold px-3 py-1.5 rounded-full mb-3">
-                📈 Growing Channels-এর জন्य
+                📈 Growing Channels-এর জন্য
               </div>
               <h3 class="font-display font-bold text-2xl text-brand-navy">Premium</h3>
-              <p class="text-gray-400 text-sm mt-1">চ্যানেলকে পরবর্তী স্तরে নিতে চান?</p>
+              <p class="text-gray-400 text-sm mt-1">চ্যানেলকে পরবর্তী স্তরে নিতে চান?</p>
             </div>
 
             <!-- Price -->
             <div class="mb-6 pb-6 border-b border-gray-100">
               <div class="flex items-end gap-1">
-                <span class="text-gray-400 text-lg">৳</span>
-                <span class="font-display font-bold text-4xl text-brand-navy">XXXX</span>
+                <span class="text-gray-400 text-lg font-semibold">৳</span>
+                <span class="font-display font-bold text-4xl text-brand-navy">৬,০০০</span>
               </div>
-              <p class="text-gray-400 text-xs mt-1">५टि स्क्रिप्ट + Full Strategy</p>
+              <p class="text-gray-400 text-xs mt-1">৫টি স্ক্রিপ্ট + Full Strategy</p>
             </div>
 
             <!-- Features -->
@@ -1136,7 +1224,7 @@
                 <span class="w-5 h-5 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
                   <svg class="w-3 h-3 text-brand-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
                 </span>
-                <span class="text-gray-600 text-sm"><strong class="text-brand-navy">५टि</strong> سम्પूर्ण स्क्रिप्ट</span>
+                <span class="text-gray-600 text-sm"><strong class="text-brand-navy">৫টি</strong> সম্পূর্ণ স্ক্রিপ্ট</span>
               </li>
               <li class="flex items-start gap-3">
                 <span class="w-5 h-5 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
@@ -1154,29 +1242,29 @@
                 <span class="w-5 h-5 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
                   <svg class="w-3 h-3 text-brand-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
                 </span>
-                <span class="text-gray-600 text-sm"><strong class="text-brand-navy">Unlimited</strong> रिभिশन</span>
+                <span class="text-gray-600 text-sm"><strong class="text-brand-navy">Unlimited</strong> রিভিশন</span>
               </li>
               <li class="flex items-start gap-3">
                 <span class="w-5 h-5 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
                   <svg class="w-3 h-3 text-brand-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
                 </span>
-                <span class="text-gray-600 text-sm">ডेलिभারी: <strong class="text-brand-navy">१५–२० दिन</strong></span>
+                <span class="text-gray-600 text-sm">ডেলিভারি: <strong class="text-brand-navy">১৫–২০ দিন</strong></span>
               </li>
               <li class="flex items-start gap-3">
                 <span class="w-5 h-5 bg-amber-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
                   <svg class="w-3 h-3 text-brand-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
                 </span>
-                <span class="text-gray-600 text-sm">🎁 ५टি Thumbnail Idea बोनस</span>
+                <span class="text-gray-600 text-sm">🎁 ৫টি Thumbnail Idea বোনাস</span>
               </li>
               <li class="flex items-start gap-3">
                 <span class="w-5 h-5 bg-amber-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
                   <svg class="w-3 h-3 text-brand-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
                 </span>
-                <span class="text-gray-600 text-sm">🎁 ३०-दिनको Content Calendar</span>
+                <span class="text-gray-600 text-sm">🎁 ৩০-দিনের Content Calendar</span>
               </li>
             </ul>
 
-            <a href="#contact" class="block text-center bg-brand-blue text-white font-bold py-4 rounded-xl hover:bg-blue-700 transition-all duration-300 shadow-lg shadow-blue-100">
+            <a href="#contact" class="block text-center bg-brand-red text-white font-bold py-4 rounded-xl hover:bg-red-700 transition-all duration-300 shadow-lg shadow-red-100">
               এই প্যাকেজ নিতে চান?
             </a>
           </div>
@@ -1188,10 +1276,10 @@
       <div class="mt-10 reveal">
         <div class="bg-white border border-dashed border-gray-300 rounded-2xl p-8 text-center max-w-2xl mx-auto">
           <div class="w-12 h-12 bg-gray-100 rounded-2xl flex items-center justify-center text-2xl mx-auto mb-4">⚙️</div>
-          <h4 class="font-bold text-brand-navy text-lg mb-2">কাস্টম প্যাকেজ দরকार?</h4>
-          <p class="text-gray-500 text-sm mb-5 leading-relaxed">উপরের প্যাকেজে আপনার চাহিদা না মিললে চিন্তা নেই! আপনার নির্দিষ্ট প্রয়োজনীয়তা জানান — আমরা একসাথে আপনার বাজেট ও লক্ষ্य অনুযায়ী সেরা সমাধান বের করব।</p>
+          <h4 class="font-bold text-brand-navy text-lg mb-2">কাস্টম প্যাকেজ দরকার?</h4>
+          <p class="text-gray-500 text-sm mb-5 leading-relaxed">উপরের প্যাকেজে আপনার চাহিদা না মিললে চিন্তা নেই! আপনার নির্দিষ্ট প্রয়োজনীয়তা জানান — আমরা একসাথে আপনার বাজেট ও লক্ষ্য অনুযায়ী সেরা সমাধান বের করব।</p>
           <a href="#contact" class="inline-flex items-center gap-2 border-2 border-brand-navy text-brand-navy font-bold px-7 py-3 rounded-xl hover:bg-brand-navy hover:text-white transition-all duration-300">
-            কাস্টম প্যাকেজ আলোচনা करুন
+            কাস্টম প্যাকেজ আলোচনা করুন
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
           </a>
         </div>
@@ -1308,12 +1396,19 @@
             </div>
             <svg class="w-5 h-5 text-gray-400 ml-auto group-hover:text-[#1877F2] transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
           </a>
+
+          <!-- Response time note -->
+          <div class="mt-6 bg-green-50 border border-green-200 rounded-2xl px-6 py-4 flex items-center gap-3">
+            <span class="w-3 h-3 bg-green-400 rounded-full animate-pulse flex-shrink-0"></span>
+            <p class="text-green-700 text-sm font-medium">আমি সাধারণত <strong>২৪ ঘণ্টার মধ্যে</strong> রিপ্লাই দিই।</p>
+          </div>
         </div>
 
         <!-- Right: Contact Form -->
         <div class="reveal">
           <div class="bg-brand-gray border border-gray-200 rounded-2xl p-8">
-            <h3 class="font-bold text-brand-navy text-xl mb-6">মেসেজ পাঠান</h3>
+            <h3 class="font-bold text-brand-navy text-xl mb-2">মেসেজ পাঠান</h3>
+            <p class="text-gray-500 text-sm mb-6">ফর্মটি পূরণ করুন — আমি শীঘ্রই আপনার সাথে যোগাযোগ করব।</p>
 
             <!-- SUCCESS MESSAGE (hidden by default) -->
             <div id="success-message" class="hidden mb-6 bg-green-50 border border-green-200 rounded-xl p-4 text-center">
@@ -1323,8 +1418,8 @@
             </div>
 
             <form id="contact-form" action="https://api.web3forms.com/submit" method="POST" class="space-y-5">
-              <!-- Web3Forms Access Key — Replace with your actual key -->
-              <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY_HERE" />
+              <!-- Web3Forms Access Key -->
+              <input type="hidden" name="access_key" value="53d0d92f-6586-4c98-9093-413e942adca3" />
               <input type="hidden" name="subject" value="New Inquiry from Shoaib Khan Portfolio" />
               <input type="hidden" name="from_name" value="Portfolio Website" />
               <input type="checkbox" name="botcheck" class="hidden" style="display:none">
@@ -1336,10 +1431,13 @@
                   class="w-full border border-gray-200 bg-white rounded-xl px-4 py-3 text-gray-800 placeholder-gray-400 transition-all text-sm" />
               </div>
 
-              <!-- YouTube / Channel -->
+              <!-- YouTube Channel — Required & improved -->
               <div>
-                <label class="block text-sm font-semibold text-gray-700 mb-2">YouTube চ্যানেল লিংক / নাম</label>
-                <input type="text" name="channel" placeholder="আপনার চ্যানেলের নাম বা লিংক"
+                <label class="block text-sm font-semibold text-gray-700 mb-1">
+                  YouTube চ্যানেল লিংক বা নাম <span class="text-brand-red">*</span>
+                </label>
+                <p class="text-xs text-gray-400 mb-2">উদাহরণ: youtube.com/@YourChannel অথবা চ্যানেলের নাম লিখুন</p>
+                <input type="text" name="channel" required placeholder="youtube.com/@YourChannel"
                   class="w-full border border-gray-200 bg-white rounded-xl px-4 py-3 text-gray-800 placeholder-gray-400 transition-all text-sm" />
               </div>
 
@@ -1356,18 +1454,22 @@
                 <select name="service" required
                   class="w-full border border-gray-200 bg-white rounded-xl px-4 py-3 text-gray-800 transition-all text-sm">
                   <option value="" disabled selected>সার্ভিস সিলেক্ট করুন</option>
+                  <option value="starter">Starter প্যাকেজ (১টি স্ক্রিপ্ট)</option>
+                  <option value="professional">Professional প্যাকেজ (৩টি স্ক্রিপ্ট)</option>
+                  <option value="premium">Premium প্যাকেজ (৫টি স্ক্রিপ্ট)</option>
                   <option value="viral-topic">Viral Topic Selection</option>
                   <option value="deep-research">Deep Topic Research</option>
                   <option value="scriptwriting">Engaging Scriptwriting</option>
                   <option value="content-strategy">Content Strategy & Planning</option>
-                  <option value="full-package">সম্পূর্ণ প্যাকেজ (সব মিলিয়ে)</option>
+                  <option value="custom">কাস্টম প্যাকেজ (আলোচনা করতে চাই)</option>
                 </select>
               </div>
 
               <!-- Message -->
               <div>
-                <label class="block text-sm font-semibold text-gray-700 mb-2">আপনার কথা বলুন <span class="text-brand-red">*</span></label>
-                <textarea name="message" rows="4" required placeholder="আপনার চ্যানেল সম্পর্কে এবং কী ধরনের সাহায্য চান সেটা জানান..."
+                <label class="block text-sm font-semibold text-gray-700 mb-1">আপনার কথা বলুন <span class="text-brand-red">*</span></label>
+                <p class="text-xs text-gray-400 mb-2">আপনার চ্যানেলের niche, subscriber সংখ্যা এবং কী ধরনের সাহায্য চান সেটা জানান।</p>
+                <textarea name="message" rows="4" required placeholder="উদাহরণ: আমার Education চ্যানেল আছে, ১০ হাজার সাবস্ক্রাইবার। আমি Viral Script লিখতে সাহায্য চাই..."
                   class="w-full border border-gray-200 bg-white rounded-xl px-4 py-3 text-gray-800 placeholder-gray-400 transition-all text-sm resize-none"></textarea>
               </div>
 
@@ -1378,7 +1480,7 @@
                 মেসেজ পাঠান
               </button>
 
-              <p class="text-center text-xs text-gray-400">আমি সাধারণত ২৪ ঘণ্টার মধ্যে রিপ্লাই দিই।</p>
+              <p class="text-center text-xs text-gray-400">📬 আমি সাধারণত ২৪ ঘণ্টার মধ্যে রিপ্লাই দিই।</p>
             </form>
           </div>
         </div>
@@ -1463,7 +1565,7 @@
     // ── Scroll Reveal ──
     const revealEls = document.querySelectorAll('.reveal');
     const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry, i) => {
+      entries.forEach((entry) => {
         if (entry.isIntersecting) {
           setTimeout(() => {
             entry.target.classList.add('visible');
@@ -1478,7 +1580,7 @@
       observer.observe(el);
     });
 
-    // ── Contact Form: AJAX submit for better UX ──
+    // ── Contact Form: AJAX submit ──
     const form = document.getElementById('contact-form');
     const submitBtn = document.getElementById('submit-btn');
     const successMsg = document.getElementById('success-message');
@@ -1516,25 +1618,25 @@
       }
     });
 
-    // ── FAQ Accordion ──
+    // ── FAQ Accordion (smooth CSS transition) ──
     document.querySelectorAll('.faq-trigger').forEach(trigger => {
       trigger.addEventListener('click', () => {
         const item = trigger.closest('.faq-item');
         const answer = item.querySelector('.faq-answer');
         const icon = item.querySelector('.faq-icon');
-        const isOpen = !answer.classList.contains('hidden');
+        const isOpen = answer.classList.contains('open');
 
         // Close all
         document.querySelectorAll('.faq-item').forEach(el => {
-          el.querySelector('.faq-answer').classList.add('hidden');
+          el.querySelector('.faq-answer').classList.remove('open');
           el.querySelector('.faq-icon').style.transform = 'rotate(0deg)';
           el.classList.remove('border-brand-red', 'ring-1', 'ring-brand-red/20');
           el.querySelector('.faq-trigger').setAttribute('aria-expanded', 'false');
         });
 
-        // Toggle current
+        // Open current if it was closed
         if (!isOpen) {
-          answer.classList.remove('hidden');
+          answer.classList.add('open');
           icon.style.transform = 'rotate(45deg)';
           item.classList.add('border-brand-red', 'ring-1', 'ring-brand-red/20');
           trigger.setAttribute('aria-expanded', 'true');
