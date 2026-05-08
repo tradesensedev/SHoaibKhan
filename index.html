@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shoaib Khan | YouTube Scriptwriter & Content Strategist</title>
+  <meta name="description" content="Shoaib Khan – Professional YouTube Scriptwriter & Content Strategist for Bangla YouTubers. Viral scripts powered by Audience Psychology." />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts: Hind Siliguri (Bengali) + Syne (Display) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            bangla: ['Hind Siliguri', 'sans-serif'],
+            display: ['Syne', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              red: '#E8193C',
+              navy: '#0A1628',
+              blue: '#1D4ED8',
+              lightblue: '#EFF6FF',
+              gold: '#F59E0B',
+              gray: '#F8FAFC',
+            }
+          },
+          animation: {
+            'fade-up': 'fadeUp 0.7s ease forwards',
+            'pulse-slow': 'pulse 3s infinite',
+          },
+          keyframes: {
+            fadeUp: {
+              '0%': { opacity: '0', transform: 'translateY(30px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    * { box-sizing: border-box; }
+    body { font-family: 'Hind Siliguri', sans-serif; scroll-behavior: smooth; }
+
+    /* Scroll reveal */
+    .reveal { opacity: 0; transform: translateY(32px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* Gradient hero */
+    .hero-gradient {
+      background: linear-gradient(135deg, #0A1628 0%, #112240 50%, #0D1F3C 100%);
+    }
+
+    /* Noise overlay for depth */
+    .noise::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      opacity: 0.5;
+    }
+
+    /* Card hover */
+    .script-card:hover { transform: translateY(-6px); box-shadow: 0 20px 40px rgba(0,0,0,0.12); }
+    .script-card { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+
+    /* Service card hover */
+    .service-card:hover .service-icon { transform: scale(1.1) rotate(-5deg); }
+    .service-icon { transition: transform 0.3s ease; }
+
+    /* Glowing badge */
+    .glow-badge {
+      box-shadow: 0 0 20px rgba(232, 25, 60, 0.35), 0 0 60px rgba(232, 25, 60, 0.15);
+    }
+
+    /* Nav link underline */
+    .nav-link::after {
+      content: '';
+      display: block;
+      height: 2px;
+      width: 0;
+      background: #E8193C;
+      transition: width 0.3s ease;
+    }
+    .nav-link:hover::after { width: 100%; }
+
+    /* Custom scrollbar */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #f1f5f9; }
+    ::-webkit-scrollbar-thumb { background: #E8193C; border-radius: 99px; }
+
+    /* Form focus */
+    input:focus, textarea:focus, select:focus {
+      outline: none;
+      border-color: #E8193C;
+      box-shadow: 0 0 0 3px rgba(232, 25, 60, 0.12);
+    }
+
+    /* Success story stripe */
+    .stripe-bg {
+      background: repeating-linear-gradient(
+        -45deg,
+        rgba(232, 25, 60, 0.03),
+        rgba(232, 25, 60, 0.03) 10px,
+        transparent 10px,
+        transparent 20px
+      );
+    }
+
+    /* Mobile menu */
+    #mobile-menu { display: none; }
+    #mobile-menu.open { display: block; }
+  </style>
+</head>
+
+<body class="bg-white text-gray-800 font-bangla antialiased">
+
+  <!-- ============================
+       NAVIGATION
+  ============================= -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-100 shadow-sm">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <!-- Logo -->
+        <a href="#hero" class="flex items-center gap-2">
+          <span class="w-8 h-8 bg-brand-red rounded-lg flex items-center justify-center text-white font-display font-bold text-sm">S</span>
+          <span class="font-display font-bold text-brand-navy text-lg">Shoaib Khan</span>
+        </a>
+
+        <!-- Desktop Nav -->
+        <div class="hidden md:flex items-center gap-8">
+          <a href="#services" class="nav-link text-sm font-medium text-gray-600 hover:text-brand-navy transition-colors">সার্ভিস</a>
+          <a href="#success" class="nav-link text-sm font-medium text-gray-600 hover:text-brand-navy transition-colors">সাফল্য</a>
+          <a href="#portfolio" class="nav-link text-sm font-medium text-gray-600 hover:text-brand-navy transition-colors">পোর্টফোলিও</a>
+          <a href="#contact" class="bg-brand-red text-white text-sm font-semibold px-5 py-2 rounded-full hover:bg-red-700 transition-colors">Hire Me</a>
+        </div>
+
+        <!-- Mobile Hamburger -->
+        <button id="hamburger" class="md:hidden p-2 rounded-lg text-gray-600 hover:bg-gray-100" aria-label="Toggle menu">
+          <svg id="icon-open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+          <svg id="icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="md:hidden bg-white border-t border-gray-100 px-4 py-4 space-y-3">
+      <a href="#services" class="block text-gray-700 font-medium py-2 hover:text-brand-red transition-colors" onclick="closeMobileMenu()">সার্ভিস</a>
+      <a href="#success" class="block text-gray-700 font-medium py-2 hover:text-brand-red transition-colors" onclick="closeMobileMenu()">সাফল্য</a>
+      <a href="#portfolio" class="block text-gray-700 font-medium py-2 hover:text-brand-red transition-colors" onclick="closeMobileMenu()">পোর্টফোলিও</a>
+      <a href="#contact" class="block bg-brand-red text-white text-center font-semibold px-5 py-3 rounded-xl hover:bg-red-700 transition-colors" onclick="closeMobileMenu()">Hire Me →</a>
+    </div>
+  </nav>
+
+
+  <!-- ============================
+       HERO SECTION
+  ============================= -->
+  <section id="hero" class="relative noise hero-gradient min-h-screen flex items-center pt-16 overflow-hidden">
+
+    <!-- Decorative circles -->
+    <div class="absolute top-20 right-10 w-72 h-72 bg-brand-red/10 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute bottom-20 left-0 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute top-1/2 right-1/4 w-40 h-40 bg-brand-gold/5 rounded-full blur-2xl pointer-events-none"></div>
+
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 w-full">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+
+        <!-- Left: Copy -->
+        <div class="text-white">
+          <!-- Badge -->
+          <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 mb-6">
+            <span class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
+            <span class="text-sm text-green-300 font-medium">এখন কাজের জন্য উপলব্ধ</span>
+          </div>
+
+          <!-- Headline -->
+          <h1 class="font-bangla font-bold text-3xl sm:text-4xl lg:text-5xl leading-tight mb-4 text-white">
+            আপনার YouTube চ্যানেলকে<br />
+            <span class="text-brand-red">পরবর্তী লেভেলে</span><br />
+            নিয়ে যান
+          </h1>
+
+          <!-- Subtitle -->
+          <p class="text-gray-300 text-lg sm:text-xl leading-relaxed mb-4">
+            আমি <strong class="text-white">Shoaib Khan</strong> — একজন Professional <strong class="text-brand-gold">YouTube Scriptwriter</strong> &amp; <strong class="text-brand-gold">Content Strategist</strong>।
+          </p>
+          <p class="text-gray-400 text-base leading-relaxed mb-8">
+            আমার স্ক্রিপ্টের আসল শক্তি হলো <strong class="text-white">Audience Psychology</strong> এবং <strong class="text-white">Emotional Factor</strong>-এর সঠিক ব্যবহার — যা একটি সাধারণ ভিডিওকে <strong class="text-brand-red">Viral</strong> করে তোলে।
+          </p>
+
+          <!-- CTA Buttons -->
+          <div class="flex flex-wrap gap-4">
+            <a href="#contact" class="bg-brand-red text-white font-bold px-8 py-4 rounded-xl hover:bg-red-700 transition-all duration-300 shadow-lg shadow-red-900/30 flex items-center gap-2">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+              Hire Me / যোগাযোগ করুন
+            </a>
+            <a href="#portfolio" class="bg-white/10 backdrop-blur-sm border border-white/25 text-white font-semibold px-8 py-4 rounded-xl hover:bg-white/20 transition-all duration-300 flex items-center gap-2">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+              See My Scripts
+            </a>
+          </div>
+
+          <!-- Stats -->
+          <div class="flex flex-wrap gap-6 mt-10 pt-8 border-t border-white/15">
+            <div>
+              <div class="text-2xl font-bold text-white">১০০%</div>
+              <div class="text-sm text-gray-400">ক্লায়েন্ট সন্তুষ্টি</div>
+            </div>
+            <div class="w-px bg-white/15"></div>
+            <div>
+              <div class="text-2xl font-bold text-white">Viral</div>
+              <div class="text-sm text-gray-400">প্রথম স্ক্রিপ্টেই সাফল্য</div>
+            </div>
+            <div class="w-px bg-white/15"></div>
+            <div>
+              <div class="text-2xl font-bold text-white">Bangla</div>
+              <div class="text-sm text-gray-400">Content Specialist</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Visual Card -->
+        <div class="hidden lg:flex justify-center items-center">
+          <div class="relative">
+            <!-- Main card -->
+            <div class="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6 w-80 shadow-2xl">
+              <div class="flex items-center gap-3 mb-5">
+                <div class="w-12 h-12 bg-brand-red rounded-xl flex items-center justify-center text-2xl">✍️</div>
+                <div>
+                  <div class="text-white font-bold">Shoaib Khan</div>
+                  <div class="text-gray-400 text-sm">YouTube Scriptwriter</div>
+                </div>
+              </div>
+              <div class="space-y-3">
+                <div class="bg-white/10 rounded-lg px-4 py-3 flex items-center gap-3">
+                  <span class="text-green-400 text-xl">🎯</span>
+                  <span class="text-gray-200 text-sm">Viral Topic Selection</span>
+                </div>
+                <div class="bg-white/10 rounded-lg px-4 py-3 flex items-center gap-3">
+                  <span class="text-xl">🧠</span>
+                  <span class="text-gray-200 text-sm">Audience Psychology Script</span>
+                </div>
+                <div class="bg-white/10 rounded-lg px-4 py-3 flex items-center gap-3">
+                  <span class="text-xl">📈</span>
+                  <span class="text-gray-200 text-sm">Content Strategy Planning</span>
+                </div>
+                <div class="bg-white/10 rounded-lg px-4 py-3 flex items-center gap-3">
+                  <span class="text-xl">🔥</span>
+                  <span class="text-gray-200 text-sm">Bangla Viral Scriptwriting</span>
+                </div>
+              </div>
+              <div class="mt-5 bg-brand-red/20 border border-brand-red/40 rounded-lg p-3 text-center">
+                <div class="text-brand-red text-sm font-bold">@WeAreNLT — প্রথম ভিডিওই Viral! 🚀</div>
+              </div>
+            </div>
+
+            <!-- Floating badges -->
+            <div class="absolute -top-4 -right-4 bg-brand-gold text-gray-900 text-xs font-bold px-3 py-2 rounded-full shadow-lg animate-pulse-slow">
+              ✨ Available Now
+            </div>
+            <div class="absolute -bottom-4 -left-4 bg-green-500 text-white text-xs font-bold px-3 py-2 rounded-full shadow-lg">
+              💬 Quick Reply
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Bottom wave -->
+    <div class="absolute bottom-0 left-0 right-0">
+      <svg viewBox="0 0 1440 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0 60L60 50C120 40 240 20 360 15C480 10 600 20 720 25C840 30 960 30 1080 25C1200 20 1320 10 1380 5L1440 0V60H1380C1320 60 1200 60 1080 60C960 60 840 60 720 60C600 60 480 60 360 60C240 60 120 60 60 60H0Z" fill="white"/>
+      </svg>
+    </div>
+  </section>
+
+
+  <!-- ============================
+       SERVICES SECTION
+  ============================= -->
+  <section id="services" class="py-20 bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <!-- Section Header -->
+      <div class="text-center mb-14 reveal">
+        <span class="text-brand-red font-semibold text-sm uppercase tracking-widest">আমি যা করি</span>
+        <h2 class="font-display font-bold text-3xl sm:text-4xl text-brand-navy mt-2 mb-4">আমার Services</h2>
+        <p class="text-gray-500 text-lg max-w-2xl mx-auto">
+          শুধু স্ক্রিপ্ট লেখা নয় — আমি আপনার পুরো Content-এর <strong>ভিত্তি</strong> তৈরি করি।
+        </p>
+      </div>
+
+      <!-- Services Grid -->
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+        <!-- Service 1 -->
+        <div class="service-card reveal bg-brand-gray border border-gray-100 rounded-2xl p-6 hover:border-brand-red/30 transition-all duration-300 cursor-default">
+          <div class="service-icon text-4xl mb-5">🎯</div>
+          <div class="inline-block bg-red-50 text-brand-red text-xs font-bold px-3 py-1 rounded-full mb-3">Viral Topic Selection</div>
+          <h3 class="font-bold text-brand-navy text-lg mb-2">ভাইরাল টপিক বাছাই</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">
+            Trending ও Evergreen — দুটো মিলিয়ে এমন টপিক বেছে দিই যা দর্শক <em>এড়াতে পারবে না</em>। সঠিক টপিকই ভিডিওর ৫০% সাফল্য।
+          </p>
+        </div>
+
+        <!-- Service 2 -->
+        <div class="service-card reveal bg-brand-gray border border-gray-100 rounded-2xl p-6 hover:border-brand-red/30 transition-all duration-300 cursor-default">
+          <div class="service-icon text-4xl mb-5">🔍</div>
+          <div class="inline-block bg-blue-50 text-blue-600 text-xs font-bold px-3 py-1 rounded-full mb-3">Deep Research</div>
+          <h3 class="font-bold text-brand-navy text-lg mb-2">গভীর রিসার্চ</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">
+            প্রতিটি স্ক্রিপ্টের আগে করা হয় গভীর Topic Research। ভুল তথ্য নয়, সঠিক ও বিশ্বাসযোগ্য কনটেন্ট — যা দর্শকের আস্থা অর্জন করে।
+          </p>
+        </div>
+
+        <!-- Service 3 -->
+        <div class="service-card reveal bg-brand-gray border border-gray-100 rounded-2xl p-6 hover:border-brand-red/30 transition-all duration-300 cursor-default">
+          <div class="service-icon text-4xl mb-5">🧠</div>
+          <div class="inline-block bg-purple-50 text-purple-600 text-xs font-bold px-3 py-1 rounded-full mb-3">Psychology & Emotion</div>
+          <h3 class="font-bold text-brand-navy text-lg mb-2">এনগেজিং স্ক্রিপ্ট রাইটিং</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">
+            শক্তিশালী <strong>Hook</strong>, সঠিক <strong>CTA</strong>, <strong>Audience Psychology</strong> ও <strong>Emotional Factor</strong>-এর সমন্বয়ে তৈরি স্ক্রিপ্ট যা দর্শককে শেষ পর্যন্ত ধরে রাখে।
+          </p>
+        </div>
+
+        <!-- Service 4 -->
+        <div class="service-card reveal bg-brand-gray border border-gray-100 rounded-2xl p-6 hover:border-brand-red/30 transition-all duration-300 cursor-default">
+          <div class="service-icon text-4xl mb-5">📅</div>
+          <div class="inline-block bg-green-50 text-green-600 text-xs font-bold px-3 py-1 rounded-full mb-3">Content Strategy</div>
+          <h3 class="font-bold text-brand-navy text-lg mb-2">পরবর্তী কন্টেন্ট প্ল্যানিং</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">
+            একটি ভিডিও বানালেই হয় না। পরবর্তী ভিডিওর প্ল্যান আগেই ঠিক রাখতে হয়। আমি আপনাকে একটি সম্পূর্ণ <strong>Content Strategy</strong> দিই।
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================
+       SUCCESS STORY SECTION
+  ============================= -->
+  <section id="success" class="py-20 bg-brand-gray">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div class="text-center mb-10 reveal">
+        <span class="text-brand-red font-semibold text-sm uppercase tracking-widest">সত্যিকারের ফলাফল</span>
+        <h2 class="font-display font-bold text-3xl sm:text-4xl text-brand-navy mt-2">সাফল্যের গল্প</h2>
+      </div>
+
+      <!-- Main Case Study Card -->
+      <div class="reveal relative bg-brand-navy rounded-3xl overflow-hidden shadow-2xl">
+        <div class="stripe-bg absolute inset-0 pointer-events-none"></div>
+
+        <!-- Top accent bar -->
+        <div class="h-1.5 bg-gradient-to-r from-brand-red via-orange-500 to-brand-gold"></div>
+
+        <div class="relative p-8 sm:p-12 lg:p-16">
+          <div class="grid lg:grid-cols-2 gap-12 items-center">
+
+            <!-- Left -->
+            <div>
+              <!-- Label -->
+              <div class="inline-flex items-center gap-2 bg-brand-red/20 border border-brand-red/40 rounded-full px-4 py-2 mb-6">
+                <span class="text-brand-red text-xl">🔥</span>
+                <span class="text-brand-red font-bold text-sm">Case Study: @WeAreNLT</span>
+              </div>
+
+              <h3 class="font-bold text-white text-2xl sm:text-3xl leading-tight mb-6">
+                আমার লেখা <span class="text-brand-red">প্রথম স্ক্রিপ্টেই</span> চ্যানেলের প্রথম ভিডিও <span class="text-brand-gold">Viral</span> হয়েছে!
+              </h3>
+
+              <p class="text-gray-300 text-lg leading-relaxed mb-6">
+                এরপর থেকে লেখা প্রায় প্রতিটি স্ক্রিপ্টই <strong class="text-white">সাকসেসফুল</strong>। ধারাবাহিকভাবে ভালো ফলাফল দেওয়াই আমার মূল লক্ষ্য।
+              </p>
+
+              <p class="text-gray-400 text-base leading-relaxed">
+                <strong class="text-white">@WeAreNLT</strong> চ্যানেলের জন্য <strong class="text-white">Audience Psychology</strong> এবং <strong class="text-white">Emotional Factor</strong>-ভিত্তিক স্ক্রিপ্ট লিখে এই অসাধারণ ফলাফল পাওয়া গেছে। সঠিক <strong class="text-white">Hook</strong> এবং শক্তিশালী <strong class="text-white">CTA</strong>-ই ছিল এই সাফল্যের চাবিকাঠি।
+              </p>
+
+              <div class="mt-8">
+                <a href="#contact" class="inline-flex items-center gap-2 bg-brand-red text-white font-bold px-7 py-4 rounded-xl hover:bg-red-700 transition-colors shadow-lg shadow-red-900/30">
+                  আপনার চ্যানেলেও এই সাফল্য চান?
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                </a>
+              </div>
+            </div>
+
+            <!-- Right: Metrics -->
+            <div class="grid grid-cols-2 gap-4">
+              <div class="glow-badge bg-brand-red/15 border border-brand-red/30 rounded-2xl p-6 text-center">
+                <div class="text-4xl mb-2">🚀</div>
+                <div class="text-brand-red font-bold text-xl">Viral</div>
+                <div class="text-gray-400 text-sm mt-1">প্রথম ভিডিওতেই</div>
+              </div>
+              <div class="bg-brand-gold/10 border border-brand-gold/30 rounded-2xl p-6 text-center">
+                <div class="text-4xl mb-2">📈</div>
+                <div class="text-brand-gold font-bold text-xl">Consistent</div>
+                <div class="text-gray-400 text-sm mt-1">ধারাবাহিক সাফল্য</div>
+              </div>
+              <div class="bg-blue-500/10 border border-blue-500/30 rounded-2xl p-6 text-center">
+                <div class="text-4xl mb-2">🧠</div>
+                <div class="text-blue-400 font-bold text-xl">Psychology</div>
+                <div class="text-gray-400 text-sm mt-1">ভিত্তিক কন্টেন্ট</div>
+              </div>
+              <div class="bg-green-500/10 border border-green-500/30 rounded-2xl p-6 text-center">
+                <div class="text-4xl mb-2">💯</div>
+                <div class="text-green-400 font-bold text-xl">Satisfied</div>
+                <div class="text-gray-400 text-sm mt-1">সন্তুষ্ট ক্লায়েন্ট</div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ============================
+       PORTFOLIO SECTION
+  ============================= -->
+  <section id="portfolio" class="py-20 bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div class="text-center mb-14 reveal">
+        <span class="text-brand-red font-semibold text-sm uppercase tracking-widest">আমার কাজ</span>
+        <h2 class="font-display font-bold text-3xl sm:text-4xl text-brand-navy mt-2 mb-4">My Portfolio</h2>
+        <p class="text-gray-500 text-lg max-w-xl mx-auto">আমার লেখা স্ক্রিপ্টগুলো দেখুন এবং বুঝুন কেন এগুলো কাজ করে।</p>
+      </div>
+
+      <!-- Script Cards Grid -->
+      <div class="grid sm:grid-cols-2 lg:grid-cols-2 gap-6">
+
+        <!-- Card 1 -->
+        <div class="script-card reveal bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-sm">
+          <div class="h-2 bg-gradient-to-r from-brand-red to-orange-400"></div>
+          <div class="p-6">
+            <div class="flex items-start gap-4 mb-4">
+              <div class="w-12 h-12 bg-red-50 rounded-xl flex items-center justify-center text-2xl flex-shrink-0">📜</div>
+              <div>
+                <div class="inline-block bg-red-50 text-brand-red text-xs font-bold px-2 py-1 rounded-full mb-1">@WeAreNLT • Viral</div>
+                <h3 class="font-bold text-brand-navy text-lg leading-tight">স্ক্রিপ্ট ০১ — ভাইরাল ভিডিও</h3>
+              </div>
+            </div>
+            <p class="text-gray-500 text-sm leading-relaxed mb-5">
+              <strong>@WeAreNLT</strong> চ্যানেলের জন্য লেখা প্রথম স্ক্রিপ্ট, যা প্রথম ভিডিওতেই Viral হয়েছে। শক্তিশালী <strong>Hook</strong> এবং <strong>Emotional Factor</strong> দিয়ে তৈরি এই স্ক্রিপ্টটি দর্শকদের শেষ পর্যন্ত ধরে রেখেছিল।
+            </p>
+            <div class="flex flex-wrap gap-2 mb-5">
+              <span class="bg-gray-100 text-gray-600 text-xs px-3 py-1 rounded-full">Hook</span>
+              <span class="bg-gray-100 text-gray-600 text-xs px-3 py-1 rounded-full">Emotional Factor</span>
+              <span class="bg-gray-100 text-gray-600 text-xs px-3 py-1 rounded-full">Viral</span>
+            </div>
+            <a href="YOUR_GOOGLE_DOCS_LINK_1" target="_blank" class="flex items-center justify-center gap-2 w-full bg-brand-navy text-white font-semibold py-3 rounded-xl hover:bg-gray-800 transition-colors text-sm">
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zm-1 1.5L18.5 9H13V3.5zM6 20V4h5v7h7v9H6z"/></svg>
+              Read Script on Google Docs
+            </a>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="script-card reveal bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-sm">
+          <div class="h-2 bg-gradient-to-r from-brand-blue to-blue-400"></div>
+          <div class="p-6">
+            <div class="flex items-start gap-4 mb-4">
+              <div class="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center text-2xl flex-shrink-0">🧠</div>
+              <div>
+                <div class="inline-block bg-blue-50 text-brand-blue text-xs font-bold px-2 py-1 rounded-full mb-1">Audience Psychology</div>
+                <h3 class="font-bold text-brand-navy text-lg leading-tight">স্ক্রিপ্ট ০২ — সাইকোলজি ভিত্তিক</h3>
+              </div>
+            </div>
+            <p class="text-gray-500 text-sm leading-relaxed mb-5">
+              <strong>Audience Psychology</strong>-ভিত্তিক এই স্ক্রিপ্টটি দর্শকের মনের গভীরে কথা বলে। সঠিক সময়ে সঠিক <strong>CTA</strong> ব্যবহার করে দর্শককে পরবর্তী ধাপে নিয়ে যাওয়া হয়েছে।
+            </p>
+            <div class="flex flex-wrap gap-2 mb-5">
+              <span class="bg-gray-100 text-gray-600 text-xs px-3 py-1 rounded-full">CTA</span>
+              <span class="bg-gray-100 text-gray-600 text-xs px-3 py-1 rounded-full">Audience Psychology</span>
+              <span class="bg-gray-100 text-gray-600 text-xs px-3 py-1 rounded-full">Deep Research</span>
+            </div>
+            <a href="YOUR_GOOGLE_DOCS_LINK_2" target="_blank" class="flex items-center justify-center gap-2 w-full bg-brand-blue text-white font-semibold py-3 rounded-xl hover:bg-blue-700 transition-colors text-sm">
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zm-1 1.5L18.5 9H13V3.5zM6 20V4h5v7h7v9H6z"/></svg>
+              Read Script on Google Docs
+            </a>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="script-card reveal bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-sm">
+          <div class="h-2 bg-gradient-to-r from-purple-500 to-pink-500"></div>
+          <div class="p-6">
+            <div class="flex items-start gap-4 mb-4">
+              <div class="w-12 h-12 bg-purple-50 rounded-xl flex items-center justify-center text-2xl flex-shrink-0">🎬</div>
+              <div>
+                <div class="inline-block bg-purple-50 text-purple-600 text-xs font-bold px-2 py-1 rounded-full mb-1">Content Strategy</div>
+                <h3 class="font-bold text-brand-navy text-lg leading-tight">স্ক্রিপ্ট ০৩ — কন্টেন্ট স্ট্র্যাটেজি</h3>
+              </div>
+            </div>
+            <p class="text-gray-500 text-sm leading-relaxed mb-5">
+              শুধু একটি ভিডিও নয়, পুরো <strong>Content Strategy</strong> মাথায় রেখে তৈরি এই স্ক্রিপ্ট। পরবর্তী ভিডিওর জন্য দর্শকের আগ্রহ ধরে রাখার কৌশল এতে অন্তর্ভুক্ত।
+            </p>
+            <div class="flex flex-wrap gap-2 mb-5">
+              <span class="bg-gray-100 text-gray-600 text-xs px-3 py-1 rounded-full">Content Strategy</span>
+              <span class="bg-gray-100 text-gray-600 text-xs px-3 py-1 rounded-full">Hook</span>
+              <span class="bg-gray-100 text-gray-600 text-xs px-3 py-1 rounded-full">Retention</span>
+            </div>
+            <a href="YOUR_GOOGLE_DOCS_LINK_3" target="_blank" class="flex items-center justify-center gap-2 w-full bg-purple-600 text-white font-semibold py-3 rounded-xl hover:bg-purple-700 transition-colors text-sm">
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zm-1 1.5L18.5 9H13V3.5zM6 20V4h5v7h7v9H6z"/></svg>
+              Read Script on Google Docs
+            </a>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="script-card reveal bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-sm">
+          <div class="h-2 bg-gradient-to-r from-brand-gold to-orange-500"></div>
+          <div class="p-6">
+            <div class="flex items-start gap-4 mb-4">
+              <div class="w-12 h-12 bg-yellow-50 rounded-xl flex items-center justify-center text-2xl flex-shrink-0">⚡</div>
+              <div>
+                <div class="inline-block bg-yellow-50 text-yellow-600 text-xs font-bold px-2 py-1 rounded-full mb-1">Emotional Factor</div>
+                <h3 class="font-bold text-brand-navy text-lg leading-tight">স্ক্রিপ্ট ০৪ — ইমোশনাল স্ক্রিপ্ট</h3>
+              </div>
+            </div>
+            <p class="text-gray-500 text-sm leading-relaxed mb-5">
+              <strong>Emotional Factor</strong>-এর সর্বোচ্চ ব্যবহার করা হয়েছে এই স্ক্রিপ্টে। দর্শকের অনুভূতির সাথে সংযোগ স্থাপন করে ভিডিওটিকে শেয়ারযোগ্য করে তোলা হয়েছে।
+            </p>
+            <div class="flex flex-wrap gap-2 mb-5">
+              <span class="bg-gray-100 text-gray-600 text-xs px-3 py-1 rounded-full">Emotional Factor</span>
+              <span class="bg-gray-100 text-gray-600 text-xs px-3 py-1 rounded-full">Shareable</span>
+              <span class="bg-gray-100 text-gray-600 text-xs px-3 py-1 rounded-full">Viral</span>
+            </div>
+            <a href="YOUR_GOOGLE_DOCS_LINK_4" target="_blank" class="flex items-center justify-center gap-2 w-full bg-brand-gold text-white font-semibold py-3 rounded-xl hover:bg-yellow-600 transition-colors text-sm">
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zm-1 1.5L18.5 9H13V3.5zM6 20V4h5v7h7v9H6z"/></svg>
+              Read Script on Google Docs
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================
+       WHY CHOOSE ME SECTION
+  ============================= -->
+  <section class="py-16 bg-brand-lightblue">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-10 reveal">
+        <span class="text-brand-red font-semibold text-sm uppercase tracking-widest">কেন আমাকে বেছে নেবেন?</span>
+        <h2 class="font-display font-bold text-3xl sm:text-4xl text-brand-navy mt-2">আমার সাথে কাজের সুবিধা</h2>
+      </div>
+      <div class="grid sm:grid-cols-3 gap-6">
+        <div class="reveal bg-white rounded-2xl p-6 shadow-sm text-center hover:shadow-md transition-shadow">
+          <div class="text-4xl mb-4">⚡</div>
+          <h4 class="font-bold text-brand-navy text-lg mb-2">দ্রুত ডেলিভারি</h4>
+          <p class="text-gray-500 text-sm">নির্ধারিত সময়ের মধ্যে স্ক্রিপ্ট ডেলিভারি। আপনার কন্টেন্ট ক্যালেন্ডার কখনো পিছিয়ে পড়বে না।</p>
+        </div>
+        <div class="reveal bg-white rounded-2xl p-6 shadow-sm text-center hover:shadow-md transition-shadow">
+          <div class="text-4xl mb-4">🔄</div>
+          <h4 class="font-bold text-brand-navy text-lg mb-2">ফ্রি রিভিশন</h4>
+          <p class="text-gray-500 text-sm">আপনি সন্তুষ্ট না হওয়া পর্যন্ত স্ক্রিপ্ট রিভাইজ করা হবে। আপনার সন্তুষ্টিই আমার প্রাধান্য।</p>
+        </div>
+        <div class="reveal bg-white rounded-2xl p-6 shadow-sm text-center hover:shadow-md transition-shadow">
+          <div class="text-4xl mb-4">🎯</div>
+          <h4 class="font-bold text-brand-navy text-lg mb-2">ফলাফলমুখী</h4>
+          <p class="text-gray-500 text-sm">শুধু স্ক্রিপ্ট নয়, আমি ফলাফলের কথা ভাবি। প্রতিটি স্ক্রিপ্ট তৈরি হয় Viral হওয়ার লক্ষ্য নিয়ে।</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================
+       CONTACT SECTION
+  ============================= -->
+  <section id="contact" class="py-20 bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div class="text-center mb-14 reveal">
+        <span class="text-brand-red font-semibold text-sm uppercase tracking-widest">যোগাযোগ করুন</span>
+        <h2 class="font-display font-bold text-3xl sm:text-4xl text-brand-navy mt-2 mb-4">আজই শুরু করুন</h2>
+        <p class="text-gray-500 text-lg max-w-xl mx-auto">
+          আপনার চ্যানেলকে পরবর্তী লেভেলে নিতে চান? এখনই আমার সাথে যোগাযোগ করুন।
+        </p>
+      </div>
+
+      <div class="grid lg:grid-cols-2 gap-12 items-start">
+
+        <!-- Left: Social Buttons -->
+        <div class="reveal space-y-4">
+          <h3 class="font-bold text-brand-navy text-xl mb-6">সরাসরি যোগাযোগ করুন</h3>
+
+          <!-- Telegram -->
+          <a href="https://t.me/YOUR_TELEGRAM_USERNAME" target="_blank"
+            class="flex items-center gap-4 bg-[#229ED9]/10 border border-[#229ED9]/30 rounded-2xl px-6 py-4 hover:bg-[#229ED9]/20 transition-all group">
+            <div class="w-12 h-12 bg-[#229ED9] rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+              <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.069l-2.025 9.539c-.144.66-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L7.48 14.461l-2.95-.924c-.642-.203-.655-.642.136-.951l11.527-4.445c.537-.193 1.006.131.835.928h-.466z"/>
+              </svg>
+            </div>
+            <div>
+              <div class="font-bold text-brand-navy">Telegram</div>
+              <div class="text-gray-500 text-sm">@YOUR_TELEGRAM_USERNAME</div>
+            </div>
+            <svg class="w-5 h-5 text-gray-400 ml-auto group-hover:text-[#229ED9] transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+          </a>
+
+          <!-- WhatsApp -->
+          <a href="https://wa.me/8801XXXXXXXXX" target="_blank"
+            class="flex items-center gap-4 bg-[#25D366]/10 border border-[#25D366]/30 rounded-2xl px-6 py-4 hover:bg-[#25D366]/20 transition-all group">
+            <div class="w-12 h-12 bg-[#25D366] rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+              <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824zm-3.423-14.416c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm.029 18.88c-1.161 0-2.305-.292-3.318-.844l-3.677.964.984-3.595c-.607-1.052-.927-2.246-.926-3.468.001-3.825 3.113-6.937 6.937-6.937 1.856.001 3.598.723 4.907 2.034 1.31 1.311 2.031 3.054 2.03 4.908-.001 3.825-3.113 6.938-6.937 6.938z"/>
+              </svg>
+            </div>
+            <div>
+              <div class="font-bold text-brand-navy">WhatsApp</div>
+              <div class="text-gray-500 text-sm">+880 1X-XXXX-XXXX</div>
+            </div>
+            <svg class="w-5 h-5 text-gray-400 ml-auto group-hover:text-[#25D366] transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+          </a>
+
+          <!-- Email -->
+          <a href="mailto:youremail@gmail.com"
+            class="flex items-center gap-4 bg-brand-red/10 border border-brand-red/30 rounded-2xl px-6 py-4 hover:bg-brand-red/20 transition-all group">
+            <div class="w-12 h-12 bg-brand-red rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            </div>
+            <div>
+              <div class="font-bold text-brand-navy">Email</div>
+              <div class="text-gray-500 text-sm">youremail@gmail.com</div>
+            </div>
+            <svg class="w-5 h-5 text-gray-400 ml-auto group-hover:text-brand-red transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+          </a>
+
+          <!-- Facebook -->
+          <a href="https://facebook.com/YOUR_FACEBOOK_ID" target="_blank"
+            class="flex items-center gap-4 bg-[#1877F2]/10 border border-[#1877F2]/30 rounded-2xl px-6 py-4 hover:bg-[#1877F2]/20 transition-all group">
+            <div class="w-12 h-12 bg-[#1877F2] rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+              <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+              </svg>
+            </div>
+            <div>
+              <div class="font-bold text-brand-navy">Facebook</div>
+              <div class="text-gray-500 text-sm">facebook.com/YOUR_PAGE</div>
+            </div>
+            <svg class="w-5 h-5 text-gray-400 ml-auto group-hover:text-[#1877F2] transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+          </a>
+        </div>
+
+        <!-- Right: Contact Form -->
+        <div class="reveal">
+          <div class="bg-brand-gray border border-gray-200 rounded-2xl p-8">
+            <h3 class="font-bold text-brand-navy text-xl mb-6">মেসেজ পাঠান</h3>
+
+            <!-- SUCCESS MESSAGE (hidden by default) -->
+            <div id="success-message" class="hidden mb-6 bg-green-50 border border-green-200 rounded-xl p-4 text-center">
+              <div class="text-3xl mb-2">✅</div>
+              <p class="font-bold text-green-700">আপনার মেসেজ পাঠানো হয়েছে!</p>
+              <p class="text-green-600 text-sm mt-1">আমি শীঘ্রই আপনার সাথে যোগাযোগ করব।</p>
+            </div>
+
+            <form id="contact-form" action="https://api.web3forms.com/submit" method="POST" class="space-y-5">
+              <!-- Web3Forms Access Key — Replace with your actual key -->
+              <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY_HERE" />
+              <input type="hidden" name="subject" value="New Inquiry from Shoaib Khan Portfolio" />
+              <input type="hidden" name="from_name" value="Portfolio Website" />
+              <input type="checkbox" name="botcheck" class="hidden" style="display:none">
+
+              <!-- Name -->
+              <div>
+                <label class="block text-sm font-semibold text-gray-700 mb-2">আপনার নাম <span class="text-brand-red">*</span></label>
+                <input type="text" name="name" required placeholder="আপনার পুরো নাম লিখুন"
+                  class="w-full border border-gray-200 bg-white rounded-xl px-4 py-3 text-gray-800 placeholder-gray-400 transition-all text-sm" />
+              </div>
+
+              <!-- YouTube / Channel -->
+              <div>
+                <label class="block text-sm font-semibold text-gray-700 mb-2">YouTube চ্যানেল লিংক / নাম</label>
+                <input type="text" name="channel" placeholder="আপনার চ্যানেলের নাম বা লিংক"
+                  class="w-full border border-gray-200 bg-white rounded-xl px-4 py-3 text-gray-800 placeholder-gray-400 transition-all text-sm" />
+              </div>
+
+              <!-- Email -->
+              <div>
+                <label class="block text-sm font-semibold text-gray-700 mb-2">ইমেইল <span class="text-brand-red">*</span></label>
+                <input type="email" name="email" required placeholder="আপনার ইমেইল ঠিকানা"
+                  class="w-full border border-gray-200 bg-white rounded-xl px-4 py-3 text-gray-800 placeholder-gray-400 transition-all text-sm" />
+              </div>
+
+              <!-- Service -->
+              <div>
+                <label class="block text-sm font-semibold text-gray-700 mb-2">কোন সার্ভিস দরকার? <span class="text-brand-red">*</span></label>
+                <select name="service" required
+                  class="w-full border border-gray-200 bg-white rounded-xl px-4 py-3 text-gray-800 transition-all text-sm">
+                  <option value="" disabled selected>সার্ভিস সিলেক্ট করুন</option>
+                  <option value="viral-topic">Viral Topic Selection</option>
+                  <option value="deep-research">Deep Topic Research</option>
+                  <option value="scriptwriting">Engaging Scriptwriting</option>
+                  <option value="content-strategy">Content Strategy & Planning</option>
+                  <option value="full-package">সম্পূর্ণ প্যাকেজ (সব মিলিয়ে)</option>
+                </select>
+              </div>
+
+              <!-- Message -->
+              <div>
+                <label class="block text-sm font-semibold text-gray-700 mb-2">আপনার কথা বলুন <span class="text-brand-red">*</span></label>
+                <textarea name="message" rows="4" required placeholder="আপনার চ্যানেল সম্পর্কে এবং কী ধরনের সাহায্য চান সেটা জানান..."
+                  class="w-full border border-gray-200 bg-white rounded-xl px-4 py-3 text-gray-800 placeholder-gray-400 transition-all text-sm resize-none"></textarea>
+              </div>
+
+              <!-- Submit -->
+              <button type="submit" id="submit-btn"
+                class="w-full bg-brand-red text-white font-bold py-4 rounded-xl hover:bg-red-700 transition-all duration-300 shadow-lg shadow-red-200 flex items-center justify-center gap-2 text-base">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/></svg>
+                মেসেজ পাঠান
+              </button>
+
+              <p class="text-center text-xs text-gray-400">আমি সাধারণত ২৪ ঘণ্টার মধ্যে রিপ্লাই দিই।</p>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================
+       FOOTER
+  ============================= -->
+  <footer class="bg-brand-navy py-10">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+        <!-- Brand -->
+        <div class="flex items-center gap-3">
+          <span class="w-10 h-10 bg-brand-red rounded-xl flex items-center justify-center text-white font-display font-bold">S</span>
+          <div>
+            <div class="font-display font-bold text-white text-lg">Shoaib Khan</div>
+            <div class="text-gray-400 text-sm">YouTube Scriptwriter & Content Strategist</div>
+          </div>
+        </div>
+
+        <!-- Nav Links -->
+        <div class="flex flex-wrap justify-center gap-6 text-sm text-gray-400">
+          <a href="#services" class="hover:text-white transition-colors">সার্ভিস</a>
+          <a href="#success" class="hover:text-white transition-colors">সাফল্য</a>
+          <a href="#portfolio" class="hover:text-white transition-colors">পোর্টফোলিও</a>
+          <a href="#contact" class="hover:text-white transition-colors">যোগাযোগ</a>
+        </div>
+
+        <!-- Social Icons -->
+        <div class="flex items-center gap-3">
+          <a href="https://t.me/YOUR_TELEGRAM_USERNAME" target="_blank" class="w-10 h-10 bg-white/10 hover:bg-[#229ED9] rounded-xl flex items-center justify-center text-gray-400 hover:text-white transition-all">
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.069l-2.025 9.539c-.144.66-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L7.48 14.461l-2.95-.924c-.642-.203-.655-.642.136-.951l11.527-4.445c.537-.193 1.006.131.835.928h-.466z"/></svg>
+          </a>
+          <a href="https://wa.me/8801XXXXXXXXX" target="_blank" class="w-10 h-10 bg-white/10 hover:bg-[#25D366] rounded-xl flex items-center justify-center text-gray-400 hover:text-white transition-all">
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824zm-3.423-14.416c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm.029 18.88c-1.161 0-2.305-.292-3.318-.844l-3.677.964.984-3.595c-.607-1.052-.927-2.246-.926-3.468.001-3.825 3.113-6.937 6.937-6.937 1.856.001 3.598.723 4.907 2.034 1.31 1.311 2.031 3.054 2.03 4.908-.001 3.825-3.113 6.938-6.937 6.938z"/></svg>
+          </a>
+          <a href="https://facebook.com/YOUR_FACEBOOK_ID" target="_blank" class="w-10 h-10 bg-white/10 hover:bg-[#1877F2] rounded-xl flex items-center justify-center text-gray-400 hover:text-white transition-all">
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
+          <a href="mailto:youremail@gmail.com" class="w-10 h-10 bg-white/10 hover:bg-brand-red rounded-xl flex items-center justify-center text-gray-400 hover:text-white transition-all">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="border-t border-white/10 mt-8 pt-6 text-center">
+        <p class="text-gray-500 text-sm">© 2025 Shoaib Khan. সর্বস্বত্ব সংরক্ষিত।</p>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- ============================
+       JAVASCRIPT
+  ============================= -->
+  <script>
+    // ── Mobile Menu ──
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const iconOpen = document.getElementById('icon-open');
+    const iconClose = document.getElementById('icon-close');
+
+    hamburger.addEventListener('click', () => {
+      mobileMenu.classList.toggle('open');
+      iconOpen.classList.toggle('hidden');
+      iconClose.classList.toggle('hidden');
+    });
+
+    function closeMobileMenu() {
+      mobileMenu.classList.remove('open');
+      iconOpen.classList.remove('hidden');
+      iconClose.classList.add('hidden');
+    }
+
+    // ── Scroll Reveal ──
+    const revealEls = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            entry.target.classList.add('visible');
+          }, 80 * (entry.target.dataset.delay || 0));
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    revealEls.forEach((el, i) => {
+      el.dataset.delay = i % 4;
+      observer.observe(el);
+    });
+
+    // ── Contact Form: AJAX submit for better UX ──
+    const form = document.getElementById('contact-form');
+    const submitBtn = document.getElementById('submit-btn');
+    const successMsg = document.getElementById('success-message');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = '<svg class="animate-spin w-5 h-5" viewBox="0 0 24 24" fill="none"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"/><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"/></svg> পাঠানো হচ্ছে...';
+
+      const data = new FormData(form);
+      try {
+        const response = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          body: data,
+        });
+        const json = await response.json();
+        if (json.success) {
+          form.reset();
+          successMsg.classList.remove('hidden');
+          submitBtn.innerHTML = '✅ পাঠানো হয়েছে!';
+          submitBtn.classList.replace('bg-brand-red', 'bg-green-500');
+          setTimeout(() => {
+            successMsg.classList.add('hidden');
+            submitBtn.innerHTML = '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/></svg> মেসেজ পাঠান';
+            submitBtn.classList.replace('bg-green-500', 'bg-brand-red');
+            submitBtn.disabled = false;
+          }, 5000);
+        } else {
+          throw new Error('Submission failed');
+        }
+      } catch (err) {
+        submitBtn.innerHTML = '❌ সমস্যা হয়েছে। আবার চেষ্টা করুন।';
+        submitBtn.classList.replace('bg-brand-red', 'bg-gray-500');
+        submitBtn.disabled = false;
+      }
+    });
+
+    // ── Active Nav Highlight on Scroll ──
+    const sections = document.querySelectorAll('section[id]');
+    window.addEventListener('scroll', () => {
+      const scrollY = window.pageYOffset;
+      sections.forEach(section => {
+        if (scrollY >= section.offsetTop - 100 && scrollY < section.offsetTop + section.offsetHeight) {
+          document.querySelectorAll('.nav-link').forEach(link => {
+            link.classList.remove('text-brand-red');
+            if (link.getAttribute('href') === '#' + section.id) {
+              link.classList.add('text-brand-red');
+            }
+          });
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
